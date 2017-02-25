@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" data-framework="relay">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Simple TODO APP by MAVAJ SUN CO</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/javascript">
+      // Force `fetch` polyfill to workaround Chrome not displaying request body
+      // in developer tools for the native `fetch`.
+      self.fetch = null;
+    </script>
+    <script src="http://localhost:3000/webpack-dev-server.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
