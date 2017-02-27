@@ -2,6 +2,10 @@ import RemoveTodoMutation from '../mutations/RemoveTodoMutation';
 import RenameTodoMutation from '../mutations/RenameTodoMutation';
 import TodoTextInput from './TodoTextInput';
 
+
+import Avatar from 'material-ui/Avatar'
+import {ListItem} from 'material-ui/List'
+
 import React from 'react';
 import Relay from 'react-relay';
 import classnames from 'classnames';
@@ -14,6 +18,8 @@ class Todo extends React.Component {
     this._removeTodo();
   };
   _handleLabelEditClick = () => {
+
+    console.log('Fired insideAvatarFunction()!');
     this._setEditMode(true);
   };
   _handleTextInputCancel = () => {
@@ -51,25 +57,29 @@ class Todo extends React.Component {
   }
   render() {
     return (
-      <li
-        className={classnames({
-          editing: this.state.isEditing,
-        })}>
-        <div className="view">
-          <label>
-            {this.props.todo.text}
-          </label>
-          <button
+      <div>
+      <ListItem
+      primaryText={this.props.todo.text}
+
+      leftAvatar={<Avatar><i className="material-icons">person_pin</i></Avatar> }
+      secondaryText="Jan 10, 2014"
+      rightIconButton={
+        <div>
+         <span
+           className="destroy"
+           onClick={this._handleDestroyClick}>
+           <i className="material-icons right">delete</i>
+         </span>
+         <span
             className="edit"
-            onClick={this._handleLabelEditClick}
-          />
-          <button
-            className="destroy"
-            onClick={this._handleDestroyClick}
-          />
+            onClick={this._handleLabelEditClick}>
+            <i className="material-icons right">border_color</i>
+         </span>
         </div>
-        {this.state.isEditing && this.renderTextInput()}
-      </li>
+        }
+      />
+      {this.state.isEditing && this.renderTextInput()}
+    </div>
     );
   }
 }

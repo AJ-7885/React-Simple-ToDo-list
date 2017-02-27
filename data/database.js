@@ -18,8 +18,8 @@ const todoIdsByUser = {
 };
 let nextTodoId = 0;
 
-addTodo('MAVAJ SUN CO', true);
-addTodo('ALI JAM', false);
+addTodo('WebChannel.DEV', true);
+addTodo('AJ/7885', false);
 
 export function addTodo(text) {
   const todo = new Todo();
