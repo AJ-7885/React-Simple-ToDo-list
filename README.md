@@ -1,4 +1,4 @@
-# Simple TODO APP
+# Simple TODO APP using ( React.JS , Relay , GraphQL )
 
 ## Installation
 
